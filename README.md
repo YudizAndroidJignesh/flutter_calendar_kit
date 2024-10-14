@@ -106,6 +106,13 @@ in any way you want, make a pull request, or open an issue.
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jignesh1997"><img src="https://avatars.githubusercontent.com/u/38436373?v=4?s=100" width="100px;" alt="Jignesh Shakya"/><br /><sub><b>Jignesh Shakya</b></sub></a><br /><a href="#infra-jignesh1997" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/YudizAndroidJignesh/flutter_calendar_kit/commits?author=jignesh1997" title="Tests">⚠️</a> <a href="https://github.com/YudizAndroidJignesh/flutter_calendar_kit/commits?author=jignesh1997" title="Code">💻</a> <a href="#projectManagement-jignesh1997" title="Project Management">📆</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
