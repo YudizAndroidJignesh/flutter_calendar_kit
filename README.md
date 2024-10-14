@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/screenshot.png)
+![](https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/banner.png)
 
 ![GitHub code size](https://img.shields.io/github/languages/code-size/YudizAndroidJignesh/flutter_calendar_kit)
 [![All Contributors](https://img.shields.io/github/all-contributors/YudizAndroidJignesh/flutter_calendar_kit)](#contributors-)
