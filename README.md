@@ -1,4 +1,7 @@
 ![](https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/banner.png)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub code size](https://img.shields.io/github/languages/code-size/YudizAndroidJignesh/flutter_calendar_kit)
 [![All Contributors](https://img.shields.io/github/all-contributors/YudizAndroidJignesh/flutter_calendar_kit)](#contributors-)
@@ -108,6 +111,20 @@ in any way you want, make a pull request, or open an issue.
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jignesh1997"><img src="https://avatars.githubusercontent.com/u/38436373?v=4?s=100" width="100px;" alt="Jignesh Shakya"/><br /><sub><b>Jignesh Shakya</b></sub></a><br /><a href="#infra-jignesh1997" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/YudizAndroidJignesh/flutter_calendar_kit/commits?author=jignesh1997" title="Tests">⚠️</a> <a href="https://github.com/YudizAndroidJignesh/flutter_calendar_kit/commits?author=jignesh1997" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 
