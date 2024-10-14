@@ -105,27 +105,16 @@ CustomCalendar(
 Contributions of any kind are more than welcome! Feel free to fork and improve flutter_calendar_kit
 in any way you want, make a pull request, or open an issue.
 
-## Contributors ✨
-
-Thanks goes to these wonderful people ✨✨:
+## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/yourusername"><img src="https://avatars.githubusercontent.com/u/youruserid?v=4?s=100" width="100px;" alt="Your Name"/><br /><sub><b>Your Name</b></sub></a><br /><a href="https://github.com/yourusername/flutter_calendar_kit/commits?author=yourusername" title="Code">💻</a> <a href="https://github.com/yourusername/flutter_calendar_kit/commits?author=yourusername" title="Documentation">📖</a></td>
-    </tr>
-  </tbody>
-</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://all-contributors.js.org/) specification. Contributions of any kind welcome!
 
 ## Getting Involved
 
