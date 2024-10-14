@@ -48,10 +48,6 @@ CustomCalendar(
 | Extensive Customization  | Customize colors, text styles, and more to match your app's design     |
 | Adjacent Month Display   | Option to show or hide dates from adjacent months                      |
 
-| <img src="https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/ss_single_select.png" width="240"/> | <img src="https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/ss_multi_select.png" width="240"/> | <img src="https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/ss_blocked_dates.png" width="240"/> |
-|:--------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------:|
-|                                                     Single Date Selection                                                         |                                                     Multi-Date Selection                                                          |                                                     Blocked and Booked Dates                                                        |
-
 ## Properties
 
 | Name                    | Type                      | Description                                                   |
