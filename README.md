@@ -1,7 +1,4 @@
-![](https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/banner.png)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+![](https://raw.githubusercontent.com/YudizAndroidJignesh/flutter_calendar_kit/main/screenshot/banner.png)
 
 ![GitHub code size](https://img.shields.io/github/languages/code-size/YudizAndroidJignesh/flutter_calendar_kit)
 [![All Contributors](https://img.shields.io/github/all-contributors/YudizAndroidJignesh/flutter_calendar_kit)](#contributors-)
@@ -19,7 +16,7 @@ and flexible date validation.
 into your Flutter application. Whether you need a simple date picker or a complex booking system,
 this package offers the flexibility to meet your needs.
 
-<img src="https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/example.gif" width="240"/>
+<img src="https://raw.githubusercontent.com/YudizAndroidJignesh/flutter_calendar_kit/main/screenshot/example.gif" width="240"/>
 
 ## Sample Code
 
@@ -50,10 +47,6 @@ CustomCalendar(
 | Dynamic Date Validation  | Implement custom logic for date selection (e.g., restrict past dates)  |
 | Extensive Customization  | Customize colors, text styles, and more to match your app's design     |
 | Adjacent Month Display   | Option to show or hide dates from adjacent months                      |
-
-| <img src="https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/ss_single_select.png" width="240"/> | <img src="https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/ss_multi_select.png" width="240"/> | <img src="https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/ss_blocked_dates.png" width="240"/> |
-|:--------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------:|
-|                                                     Single Date Selection                                                         |                                                     Multi-Date Selection                                                          |                                                     Blocked and Booked Dates                                                        |
 
 ## Properties
 
@@ -120,13 +113,6 @@ in any way you want, make a pull request, or open an issue.
     </tr>
   </tbody>
 </table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
