@@ -96,7 +96,6 @@ CustomCalendar(
 )
 ```
 
-
 ## Contributions
 
 Contributions of any kind are more than welcome! Feel free to fork and improve flutter_calendar_kit
