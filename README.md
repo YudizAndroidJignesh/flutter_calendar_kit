@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/banner.png)
+![](https://raw.githubusercontent.com/YudizAndroidJignesh/flutter_calendar_kit/main/screenshot/banner.png)
 
 ![GitHub code size](https://img.shields.io/github/languages/code-size/YudizAndroidJignesh/flutter_calendar_kit)
 [![All Contributors](https://img.shields.io/github/all-contributors/YudizAndroidJignesh/flutter_calendar_kit)](#contributors-)
@@ -16,7 +16,7 @@ and flexible date validation.
 into your Flutter application. Whether you need a simple date picker or a complex booking system,
 this package offers the flexibility to meet your needs.
 
-<img src="https://raw.githubusercontent.com/yourusername/flutter_calendar_kit/main/screenshot/example.gif" width="240"/>
+<img src="https://raw.githubusercontent.com/YudizAndroidJignesh/flutter_calendar_kit/main/screenshot/example.gif" width="240"/>
 
 ## Sample Code
 
