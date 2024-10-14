@@ -1,39 +1,100 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Flutter Calendar Kit
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Flutter Calendar Kit is a highly customizable and flexible calendar widget for Flutter applications. It offers a range of features including single and multi-date selection, blocked and booked date handling, flexible date validation, and extensive visual customization options.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- 📅 Single and multi-date selection
+- 🚫 Blocked date highlighting and optional selection
+- 🏨 Booked date highlighting
+- ✅ Dynamic date validation (e.g., restrict past dates, future dates, or specific days of the week)
+- 🎨 Extensive color customization for various calendar elements
+- 🖌️ Customizable text styles for weekday headers and date cells
+- 📊 Option to show or hide adjacent month dates
+- 🔤 Support for custom font families
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add this to your package's `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  flutter_calendar_kit: ^0.1.0
+```
+
+Then run:
+
+```
+$ flutter pub get
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### Basic Usage
 
 ```dart
-const like = 'sample';
+import 'package:flutter/material.dart';
+import 'package:flutter_calendar_kit/flutter_calendar_kit.dart';
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Flutter Calendar Kit Example')),
+      body: CustomCalendar(
+        onDatesSelected: (dates) {
+          print('Selected dates: $dates');
+        },
+      ),
+    );
+  }
+}
 ```
 
-## Additional information
+### Advanced Usage
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+CustomCalendar(
+  onDatesSelected: (dates) {
+    print('Selected dates: $dates');
+  },
+  initialBlockedDates: [DateTime(2023, 10, 15), DateTime(2023, 10, 16)],
+  initialBookedDates: [DateTime(2023, 10, 20), DateTime(2023, 10, 21)],
+  dateValidationCallback: (date) {
+    final now = DateTime.now();
+    final thirtyDaysFromNow = now.add(Duration(days: 30));
+    return date.isAfter(now.subtract(Duration(days: 1))) &&
+           date.isBefore(thirtyDaysFromNow) &&
+           date.weekday != DateTime.saturday &&
+           date.weekday != DateTime.sunday;
+  },
+  primaryColor: Colors.green,
+  blockedColor: Colors.red.withOpacity(0.5),
+  bookedColor: Colors.orange,
+  allowBlockedSelection: true,
+  showAdjacentMonths: true,
+)
+```
+
+## Customization
+
+Flutter Calendar Kit offers extensive customization options:
+
+- `primaryColor`: The main color used for selection and highlighting.
+- `blockedColor`: Color used for blocked dates.
+- `bookedColor`: Color used for booked dates.
+- `nonSelectableDateColor`: Color for dates that are not selectable.
+- `currentMonthTextColor`: Text color for dates in the current month.
+- `otherMonthTextColor`: Text color for dates from adjacent months.
+- `selectedDateTextColor`: Text color for selected dates.
+- `todayColor`: Color used to highlight today's date.
+- `fontFamily`: Custom font family for the calendar text.
+- `weekdayTextStyle`: Custom text style for weekday headers.
+
+## Contributing
+
+Contributions are welcome! If you find a bug or want a feature, please open an issue. If you want to contribute code, please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
