@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_calendar/flutter_calendar_kit.dart';
+import 'package:flutter_calendar_kit/flutter_calendar_kit.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('Custom Calendar Example')),
+        appBar: AppBar(title: const Text('Custom Calendar Example')),
         body: CustomCalendar(
           initialBlockedDates: [ DateTime(2024, 10, 16), DateTime(2024, 10, 17),DateTime(2024, 10, 17)],
           initialBookedDates: [DateTime(2024, 10, 20), DateTime(2024, 10, 21),DateTime(2024, 10, 22)],
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Roboto',
           allowBlockedSelection: false,
           showAdjacentMonths: false,
-          weekdayTextStyle: TextStyle(
+          weekdayTextStyle: const TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
           ),

@@ -1,6 +1,24 @@
-// File: lib/flutter_calendar_kit.dart
+/// A customizable calendar widget for Flutter applications.
+///
+/// This widget provides a flexible calendar interface with features such as
+/// single and multi-date selection, blocked and booked date handling, and
+/// extensive visual customization options.
+///
+/// Example usage:
+/// ```dart
+/// CustomCalendar(
+///   onDatesSelected: (dates) {
+///     print('Selected dates: $dates');
+///   },
+///   initialBlockedDates: [DateTime(2023, 10, 15), DateTime(2023, 10, 16)],
+///   primaryColor: Colors.green,
+///   allowBlockedSelection: false,
+/// )
+/// ```
+library;
 
 import 'package:flutter/material.dart';
+
 typedef DateValidationCallback = bool Function(DateTime date);
 
 class CustomCalendar extends StatefulWidget {
@@ -25,14 +43,12 @@ class CustomCalendar extends StatefulWidget {
   final bool allowBlockedSelection;
   final bool showAdjacentMonths;
 
-
-   DateValidationCallback? dateValidationCallback;
+  final DateValidationCallback? dateValidationCallback;
   final Color nonSelectableDateColor;
   final Color nonSelectableTextColor;
 
-
-   CustomCalendar({
-    Key? key,
+  const CustomCalendar({
+    super.key,
     required this.onDatesSelected,
     this.initialBlockedDates = const [],
     this.initialBookedDates = const [],
@@ -53,16 +69,18 @@ class CustomCalendar extends StatefulWidget {
     this.weekdayTextStyle,
     this.fontFamily,
     this.allowBlockedSelection = false,
-    this.showAdjacentMonths = true, required this.pastDateColor, required this.pastDateTextColor,
-  }) : super(key: key);
+    this.showAdjacentMonths = true,
+    required this.pastDateColor,
+    required this.pastDateTextColor,
+  });
 
   @override
-  _CustomCalendarState createState() => _CustomCalendarState();
+  CustomCalendarState createState() => CustomCalendarState();
 }
 
-class _CustomCalendarState extends State<CustomCalendar> {
+class CustomCalendarState extends State<CustomCalendar> {
   late DateTime _currentMonth;
-  List<DateTime> _selectedDates = [];
+  final List<DateTime> _selectedDates = [];
   DateTime? _dragStart;
   DateTime? _dragEnd;
   List<DateTime> _blockedDates = [];
@@ -132,15 +150,16 @@ class _CustomCalendarState extends State<CustomCalendar> {
       List<DateTime> visibleDates = _getVisibleDates();
       List<DateTime> draggedDates = [];
       for (DateTime date = start;
-      !date.isAfter(end);
-      date = date.add(Duration(days: 1))) {
+          !date.isAfter(end);
+          date = date.add(const Duration(days: 1))) {
         if (visibleDates.contains(date)) {
           draggedDates.add(date);
         }
       }
 
       setState(() {
-        bool allSelected = draggedDates.every((date) => _selectedDates.contains(date));
+        bool allSelected =
+            draggedDates.every((date) => _selectedDates.contains(date));
         if (allSelected) {
           // If all dragged dates are already selected, deselect them
           _selectedDates.removeWhere((date) => draggedDates.contains(date));
@@ -160,14 +179,14 @@ class _CustomCalendarState extends State<CustomCalendar> {
 
   bool _isDateBlocked(DateTime date) {
     return _blockedDates.any((blockedDate) =>
-    blockedDate.year == date.year &&
+        blockedDate.year == date.year &&
         blockedDate.month == date.month &&
         blockedDate.day == date.day);
   }
 
   bool _isDateBooked(DateTime date) {
     return _bookedDates.any((bookedDate) =>
-    bookedDate.year == date.year &&
+        bookedDate.year == date.year &&
         bookedDate.month == date.month &&
         bookedDate.day == date.day);
   }
@@ -186,7 +205,6 @@ class _CustomCalendarState extends State<CustomCalendar> {
     );
   }
 
-
   Widget _buildHeader() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -200,7 +218,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
           Column(
             children: [
               Text(
-                '${_getMonthName(_currentMonth.month)}',
+                _getMonthName(_currentMonth.month),
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
@@ -235,14 +253,14 @@ class _CustomCalendarState extends State<CustomCalendar> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: weekdays
             .map((day) => Text(
-          day,
-          style: widget.weekdayTextStyle ??
-              TextStyle(
-                fontSize: 13,
-                color: Colors.grey,
-                fontFamily: widget.fontFamily,
-              ),
-        ))
+                  day,
+                  style: widget.weekdayTextStyle ??
+                      TextStyle(
+                        fontSize: 13,
+                        color: Colors.grey,
+                        fontFamily: widget.fontFamily,
+                      ),
+                ))
             .toList(),
       ),
     );
@@ -263,7 +281,8 @@ class _CustomCalendarState extends State<CustomCalendar> {
       },
       onPanUpdate: (details) {
         if (_isDragging) {
-          final date = _getDateFromPosition(details.localPosition, visibleDates);
+          final date =
+              _getDateFromPosition(details.localPosition, visibleDates);
           if (date != null) {
             _updateDragSelection(date);
           }
@@ -279,8 +298,8 @@ class _CustomCalendarState extends State<CustomCalendar> {
       },
       child: GridView.builder(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 7,
           childAspectRatio: 1,
         ),
@@ -311,18 +330,21 @@ class _CustomCalendarState extends State<CustomCalendar> {
     return GestureDetector(
       onTap: isPastDate ? null : () => _handleTap(date),
       child: Container(
-        margin: EdgeInsets.all(2),
+        margin: const EdgeInsets.all(2),
         decoration: BoxDecoration(
-          color: _getCellColor(isCurrentMonth, isSelected, isDragging, isBlocked, isBooked, isPastDate, isToday),
+          color: _getCellColor(isCurrentMonth, isSelected, isDragging,
+              isBlocked, isBooked, isPastDate, isToday),
           borderRadius: BorderRadius.circular(10),
-          border: isToday ? Border.all(color: widget.todayColor, width: 2) : null,
+          border:
+              isToday ? Border.all(color: widget.todayColor, width: 2) : null,
         ),
         child: Center(
           child: Text(
             day.toString(),
             style: TextStyle(
               fontSize: 15,
-              color: _getDateColor(isCurrentMonth, isSelected, isDragging, isBlocked, isBooked, isPastDate, isToday),
+              color: _getDateColor(isCurrentMonth, isSelected, isDragging,
+                  isBlocked, isBooked, isPastDate, isToday),
               fontFamily: widget.fontFamily,
             ),
           ),
@@ -345,18 +367,26 @@ class _CustomCalendarState extends State<CustomCalendar> {
         (date.isAfter(start) && date.isBefore(end));
   }
 
-  Color _getCellColor(bool isCurrentMonth, bool isSelected, bool isDragging, bool isBlocked, bool isBooked, bool isPastDate, bool isToday) {
+  Color _getCellColor(bool isCurrentMonth, bool isSelected, bool isDragging,
+      bool isBlocked, bool isBooked, bool isPastDate, bool isToday) {
     if (isPastDate) return widget.pastDateColor;
     if (isBlocked) {
-      return isSelected && widget.allowBlockedSelection ? widget.primaryColor : widget.blockedColor;
+      return isSelected && widget.allowBlockedSelection
+          ? widget.primaryColor
+          : widget.blockedColor;
     }
     if (isDragging) return widget.primaryColor.withOpacity(0.1);
-    if (isSelected) return isBooked ? widget.bookedColor.withOpacity(0.3) : widget.primaryColor;
+    if (isSelected) {
+      return isBooked
+          ? widget.bookedColor.withOpacity(0.3)
+          : widget.primaryColor;
+    }
     if (isToday) return widget.todayColor;
     return Colors.transparent;
   }
 
-  Color _getDateColor(bool isCurrentMonth, bool isSelected, bool isDragging, bool isBlocked, bool isBooked, bool isPastDate, bool isToday) {
+  Color _getDateColor(bool isCurrentMonth, bool isSelected, bool isDragging,
+      bool isBlocked, bool isBooked, bool isPastDate, bool isToday) {
     if (isPastDate) return widget.pastDateTextColor;
     if (isBlocked) return widget.blockedTextColor;
     if (!isCurrentMonth) return widget.otherMonthTextColor;
@@ -369,15 +399,27 @@ class _CustomCalendarState extends State<CustomCalendar> {
 
   String _getMonthName(int month) {
     const monthNames = [
-      'January', 'February', 'March', 'April', 'May', 'June',
-      'July', 'August', 'September', 'October', 'November', 'December'
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
     ];
     return monthNames[month - 1];
   }
 
   List<DateTime> _getVisibleDates() {
-    final firstDayOfMonth = DateTime(_currentMonth.year, _currentMonth.month, 1);
-    final firstVisibleDay = firstDayOfMonth.subtract(Duration(days: (firstDayOfMonth.weekday - 1) % 7));
+    final firstDayOfMonth =
+        DateTime(_currentMonth.year, _currentMonth.month, 1);
+    final firstVisibleDay = firstDayOfMonth
+        .subtract(Duration(days: (firstDayOfMonth.weekday - 1) % 7));
     final numberOfWeeks = _getNumberOfWeeksInMonth(_currentMonth);
 
     List<DateTime> visibleDates = [];
@@ -391,7 +433,8 @@ class _CustomCalendarState extends State<CustomCalendar> {
   int _getNumberOfWeeksInMonth(DateTime month) {
     final firstDayOfMonth = DateTime(month.year, month.month, 1);
     final lastDayOfMonth = DateTime(month.year, month.month + 1, 0);
-    final daysFromFirstMonday = lastDayOfMonth.day + (firstDayOfMonth.weekday - 1) % 7;
+    final daysFromFirstMonday =
+        lastDayOfMonth.day + (firstDayOfMonth.weekday - 1) % 7;
     return (daysFromFirstMonday / 7).ceil();
   }
 

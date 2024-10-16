@@ -30,10 +30,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_custom_calendar:
+  flutter_calendar_kit:
     path: ../  # This references the parent directory where your package is located
 
-
+linter:
+  rules:
+    - dangling_library_doc_comments
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
