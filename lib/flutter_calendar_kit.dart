@@ -1,4 +1,4 @@
-// File: lib/flutter_custom_calendar.dart
+// File: lib/flutter_calendar_kit.dart
 
 import 'package:flutter/material.dart';
 typedef DateValidationCallback = bool Function(DateTime date);

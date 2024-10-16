@@ -25,10 +25,6 @@ topics:
   - custom-widget
   - flutter-calendar
   - booking-system
-  - event-planning
-  - date-selection
-  - date-range
-  - customizable
 
 dev_dependencies:
   flutter_test:
